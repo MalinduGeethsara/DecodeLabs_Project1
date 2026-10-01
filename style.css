@@ -1,0 +1,123 @@
+:root {
+    --mocha-mousse: #A5886F;
+    --ethereal-blue: #A0D4E0;
+    --moonlit-grey: #F2F0EA;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --text-dark: #2c2c2c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--moonlit-grey);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--mocha-mousse); 
+}
+
+header {
+    background-color: var(--ethereal-blue);
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+main {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#hero, #about, aside {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+button {
+    background-color: var(--mocha-mousse);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--ethereal-blue);
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+
+@media (min-width: 768px) {
+    .nav-links {
+        margin-top: 0;
+        gap: 30px;
+    }
+    main {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 300px; 
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "header header"
+            "main aside"
+            "footer footer";
+        min-height: 100vh;
+    }
+
+    header { grid-area: header; }
+    
+    main { 
+        grid-area: main; 
+        padding: 3rem;
+    }
+    
+    aside { 
+        grid-area: aside; 
+        margin: 3rem 2rem 0 0;
+    }
+    
+    footer { grid-area: footer; }
+}
